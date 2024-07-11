@@ -1,30 +1,61 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .container {
-    text-align: center;
+    width: 80%;
+    max-width: 800px;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h1 {
+body.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.header {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.pages-bar {
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 .controls {
+    text-align: center;
     margin-bottom: 20px;
 }
 
+.controls label {
+    display: block;
+    margin-top: 10px;
+}
+
+.controls select,
+.controls input {
+    margin-top: 5px;
+}
+
 button {
+    margin-top: 10px;
     background: #007BFF;
     color: #fff;
     border: none;
@@ -38,5 +69,38 @@ button:hover {
 }
 
 .result {
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+body.dark-mode .result {
+    border: 2px solid #ffffff;
+}
+
+.result h2 {
+    margin-top: 0;
+}
+
+#nameOutput {
+    margin-top: 10px;
     font-size: 1.2em;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    outline: none;
+}
+
+#darkModeIcon {
+    transition: transform 0.3s;
+}
+
+body.dark-mode #darkModeIcon {
+    transform: rotate(180deg);
 }
